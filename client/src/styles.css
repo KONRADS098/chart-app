@@ -8,3 +8,14 @@
   background-image: url("https://uploads-ssl.webflow.com/61902044595dae18f9e01921/61902044595dae5edfe01942_ico-pattern-hero.svg");
   z-index: -1; /* position beneath all other elements */
 }
+
+.btn-primary {
+  background: -webkit-linear-gradient(to right, #00056B, #FF63B3FF);
+  background: linear-gradient(to right, #00056B, #FF63B3FF);
+  color: #fff;
+  border: 3px solid;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  border: 3px solid black;
+}
