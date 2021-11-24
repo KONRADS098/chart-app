@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://uploads-ssl.webflow.com/61902044595dae18f9e01921/61902044595dae5edfe01942_ico-pattern-hero.svg");
+  z-index: -1; /* position beneath all other elements */
+}
