@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ChartService {
   private chartData: { label: string, data: { x: string, y: number }[] }[] = [
     {
-      label: "FBSV",
+      label: "TEAM 1",
       data: [
         {
           x: "2021-01-01",
@@ -23,7 +23,7 @@ export class ChartService {
       ]
     },
     {
-      label: "FBE",
+      label: "TEAM 2",
       data: [
         {
           "x": "2021-01-01",
@@ -40,7 +40,7 @@ export class ChartService {
       ]
     },
     {
-      label: "FG",
+      label: "TEAM 3",
       data: [
         {
           x: "2021-01-01",
@@ -57,7 +57,7 @@ export class ChartService {
       ]
     },
     {
-      label: "FMR",
+      label: "TEAM 4",
       data: [
         {
           x: "2021-01-01",
@@ -74,7 +74,7 @@ export class ChartService {
       ]
     },
     {
-      label: "FDMCI",
+      label: "TEAM 5",
       data: [
         {
           x: "2021-01-01",
@@ -91,7 +91,7 @@ export class ChartService {
       ]
     },
     {
-      label: "FOO",
+      label: "TEAM 6",
       data: [
         {
           x: "2021-01-01",
@@ -108,7 +108,7 @@ export class ChartService {
       ]
     },
     {
-      label: "FT",
+      label: "TEAM 7",
       data: [
         {
           x: "2021-01-01",
