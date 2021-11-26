@@ -1,7 +1,17 @@
 <section id="chart" class="d-flex align-items-center">
   <div class="container">
-    <div class="row">
-      <p>Chart page</p>
+    <div class="row mt-5">
+      <div class="col-md-8">
+        <h4 class="text-center mb-3">Chart</h4>
+        <canvas baseChart
+                [data]="chartData"
+                [options]="chartOptions"
+                [type]="chartType">
+        </canvas>
+      </div>
+      <div class="col-md-4">
+        table here
+      </div>
     </div>
   </div>
 </section>

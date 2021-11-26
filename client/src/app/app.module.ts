@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { ChartComponent } from './component/chart/chart.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { NgChartsModule } from "ng2-charts";
+
+import 'chartjs-adapter-moment';
 
 @NgModule({
   declarations: [
@@ -14,10 +17,11 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     ChartComponent,
     NavbarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgChartsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
