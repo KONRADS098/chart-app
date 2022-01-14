@@ -9,16 +9,14 @@
   z-index: -1; /* position beneath all other elements */
 }
 
-:root {
-  --primaryColor: linear-gradient(to right, #0f0097, #3100a0, #4800a8, #5b00b1, #6e00b9, #8000c1, #9200c9, #a400d1, #bb00da, #d100e3, #e800eb, #ff00f3);
-}
-
 .bg-primary {
-  background: var(--primaryColor)
+  background: -webkit-linear-gradient(to right, #00056b, #280987, #460da3, #650fbf, #860edb, #a603dc, #c200dc, #dc00db, #ed00c2, #f800aa, #fe0093, #ff007f);
+  background: linear-gradient(to right, #00056b, #280987, #460da3, #650fbf, #860edb, #a603dc, #c200dc, #dc00db, #ed00c2, #f800aa, #fe0093, #ff007f);
 }
 
 .btn-primary {
-  background: var(--primaryColor);
+  background: -webkit-linear-gradient(to right, #00056b, #280987, #460da3, #650fbf, #860edb, #a603dc, #c200dc, #dc00db, #ed00c2, #f800aa, #fe0093, #ff007f);
+  background: linear-gradient(to right, #00056b, #280987, #460da3, #650fbf, #860edb, #a603dc, #c200dc, #dc00db, #ed00c2, #f800aa, #fe0093, #ff007f);
   color: #fff;
   border: 3px solid;
 }
