@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {BaseChartDirective} from "ng2-charts";
 import {ChartConfiguration, ChartType} from "chart.js";
 import {ChartService} from "../../services/chart.service";
+import {Dataset} from "../../models/dataset";
 
 @Component({
   selector: 'app-chart',
@@ -9,14 +10,6 @@ import {ChartService} from "../../services/chart.service";
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
-
-  constructor(private chartService: ChartService) { }
-
-  ngOnInit(): void {
-    // on initial render get the data from the service in order to fill the chart
-    this.updateChartWithData(this.chartService.getChartData())
-
-  }
 
   // Setup and define chart configuration
   public chartData: ChartConfiguration<"line", { x: string, y: number }[]>['data'] = {
@@ -72,10 +65,22 @@ export class ChartComponent implements OnInit {
 
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
-  private updateChartWithData(data: { label: string; data: { x: string; y: number }[] }[]): void {
-    this.chartData.datasets = data; // add the data to the Chart dataset
-    this.chartData.labels = this.getDatesFromDataSet(data) // add the dates to the Chart labels
-    this.chart?.update(); // update the chart in order to set the new data in chart
+  constructor(private chartService: ChartService) { }
+
+  ngOnInit(): void {
+    // on initial render plot the chart by retrieving data from the service and then plotting it to the chart
+    this.chartService.plot({})  // pass in an empty object, because we don't want any filter on the initial render
+      .subscribe(
+        responseData => this.updateChartWithData(responseData),
+        error => console.log(error) // TODO: add error handling
+      )
+  }
+
+  private updateChartWithData(data: Dataset[]): void {
+    // TODO: get the date ranges by going through the retrieved data
+    // TODO: update the chart.datasets
+    // TODO: update the chart.labels with the date range
+    // TODO: create an average dataset using the date range
   }
 
   // Creates an array of dates from a given dataset that has a string x value, this has to be done in order to have a
