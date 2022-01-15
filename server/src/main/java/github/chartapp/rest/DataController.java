@@ -24,14 +24,19 @@ public class DataController {
     public List<Data> getAnswers(@RequestParam(value = "filter", required = false) String filter) {
         List<Data> schools = List.of(
                 new Data(0, 10, "School 1",LocalDate.of(2022, 1, 12)),
+                new Data(0, 20, "School 1",LocalDate.of(2022, 1, 12)),
                 new Data(0, 16, "School 1",LocalDate.of(2023, 1, 12)),
                 new Data(0, 22, "School 2",LocalDate.of(2022, 1, 13)),
+                new Data(0, 44, "School 2",LocalDate.of(2022, 1, 13)),
                 new Data(0, 30, "School 2",LocalDate.of(2023, 1, 13)),
                 new Data(0, 40, "School 3",LocalDate.of(2022, 1, 15)),
+                new Data(0, 80, "School 3",LocalDate.of(2022, 1, 15)),
                 new Data(0, 60, "School 3",LocalDate.of(2023, 1, 15)),
                 new Data(0, 80, "School 4",LocalDate.of(2022, 1, 14)),
+                new Data(0, 10, "School 4",LocalDate.of(2022, 1, 14)),
                 new Data(0, 13, "School 4",LocalDate.of(2023, 1, 14)),
                 new Data(0, 91, "School 5",LocalDate.of(2022, 1, 19)),
+                new Data(0, 88, "School 5",LocalDate.of(2022, 1, 19)),
                 new Data(0, 13, "School 5",LocalDate.of(2023, 1, 19))
         );
 

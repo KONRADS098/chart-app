@@ -5,13 +5,13 @@ import java.time.LocalDate;
 public class Data {
     private int id;
     private double score;
-    private String groupName;
+    private String name;
     private LocalDate submitDate;
 
-    public Data(int id, double score, String groupName,LocalDate submitDate) {
+    public Data(int id, double score, String name,LocalDate submitDate) {
         this.id = id;
         this.score = score;
-        this.groupName = groupName;
+        this.name = name;
         this.submitDate = submitDate;
     }
 
@@ -31,12 +31,12 @@ public class Data {
         this.score = score;
     }
 
-    public String getGroupName() {
-        return groupName;
+    public String getName() {
+        return name;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public LocalDate getSubmitDate() {
