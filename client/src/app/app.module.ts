@@ -10,6 +10,7 @@ import { NgChartsModule } from "ng2-charts";
 
 import 'chartjs-adapter-moment';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,12 +19,14 @@ import {HttpClientModule} from "@angular/common/http";
     ChartComponent,
     NavbarComponent
   ],
-    imports: [
-      BrowserModule,
-      AppRoutingModule,
-      NgChartsModule,
-      HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgChartsModule,
+    FormsModule,
+    HttpClientModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

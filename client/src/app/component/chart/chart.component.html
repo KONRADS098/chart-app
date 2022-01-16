@@ -1,5 +1,19 @@
 <section id="chart" class="d-flex align-items-center">
   <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <label class="form-check-label" for="radio-1">Schools</label>
+        <input class="form-check-input me-1" [(ngModel)]="info.filter" value="schools" type="radio"
+               name="flexRadioDefault" id="radio-1" (change)="filterChart(info)">
+        <label class="form-check-label" for="radio-2">Classes</label>
+        <input class="form-check-input me-1" [(ngModel)]="info.filter" value="classes" type="radio"
+               name="flexRadioDefault" id="radio-2" (change)="filterChart(info)">
+        <label class="form-check-label" for="radio-3">Groups</label>
+        <input class="form-check-input me-1" [(ngModel)]="info.filter" value="groups" type="radio"
+               name="flexRadioDefault" id="radio-3" (change)="filterChart(info)">
+      </div>
+    </div>
+
     <div class="row mt-5">
       <div class="col-md-8">
         <h4 class="text-center mb-3 fw-bold">Chart</h4>

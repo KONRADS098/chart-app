@@ -1,6 +1,7 @@
 package github.chartapp.models;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Data {
     private int id;
@@ -45,5 +46,28 @@ public class Data {
 
     public void setSubmitDate(LocalDate submitDate) {
         this.submitDate = submitDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Data)) return false;
+        Data data = (Data) o;
+        return getId() == data.getId() && Double.compare(data.getScore(), getScore()) == 0 && Objects.equals(getName(), data.getName()) && Objects.equals(getSubmitDate(), data.getSubmitDate());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getScore(), getName(), getSubmitDate());
+    }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "id=" + id +
+                ", score=" + score +
+                ", name='" + name + '\'' +
+                ", submitDate=" + submitDate +
+                '}';
     }
 }

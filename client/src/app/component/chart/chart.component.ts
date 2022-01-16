@@ -3,6 +3,7 @@ import {BaseChartDirective} from "ng2-charts";
 import {ChartConfiguration, ChartType} from "chart.js";
 import {ChartService} from "../../services/chart.service";
 import {Dataset} from "../../models/dataset";
+import {Datapoint} from "../../models/datapoint";
 
 @Component({
   selector: 'app-chart',
@@ -10,6 +11,8 @@ import {Dataset} from "../../models/dataset";
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
+  // all the info regarding the selected filters
+  public info: any = {}
 
   // Setup and define chart configuration
   public chartData: ChartConfiguration<"line", { x: string, y: number }[]>['data'] = {
@@ -76,6 +79,16 @@ export class ChartComponent implements OnInit {
       )
   }
 
+  public filterChart(info): void {
+    // plot the chart with the retrieved data from service using the given filter
+    this.chartService.plot(info)
+      .subscribe(
+        responseData => this.updateChartWithData(responseData),
+        error => console.log(error) // TODO: add error handling
+      )
+  }
+
+
   private updateChartWithData(data: Dataset[]): void {
     // TODO: get the date ranges by going through the retrieved data
     // TODO: update the chart.datasets
@@ -86,7 +99,7 @@ export class ChartComponent implements OnInit {
   // Creates an array of dates from a given dataset that has a string x value, this has to be done in order to have a
   // non empty labels array in the chartDataSet, because Chart.js sets the dates from the x values automatically you have
   // to do this yourself
-  private getDatesFromDataSet(dataSet: { data: { x: string }[] }[]): string[] {
+  private getDatesFromDataSet(dataSet: { data: Datapoint[] }[]): string[] {
     let dates: string[] = []
 
     // push the date from each data point into the dates array

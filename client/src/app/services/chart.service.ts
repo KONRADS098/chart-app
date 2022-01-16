@@ -12,8 +12,10 @@ import {map} from "rxjs/operators";
 export class ChartService {
   constructor(private http: HttpClient) {}
 
-  public plot(filter?: { }): Observable<Dataset[]> {
-    const params: HttpParams = createHttpParams({ filter: filter });
+  public plot(info?: { filter?: string }): Observable<Dataset[]> {
+
+    const params: HttpParams = createHttpParams({ filter: info.filter });
+
     return this.http.get(
       `${environment.apiUrl}/data`,
       { params })
@@ -22,7 +24,8 @@ export class ChartService {
       )
   }
 
-  private convertAnswersToChartData(responseData: { }): Dataset[] {
+  private convertAnswersToChartData(responseData: {}): Dataset[] {
+    console.log(responseData)
     //TODO: convert objects to DataSets and DataPoints in
     return [];
   }

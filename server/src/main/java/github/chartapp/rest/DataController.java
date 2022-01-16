@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,6 +23,7 @@ public class DataController {
 
     @GetMapping()
     public List<Data> getAnswers(@RequestParam(value = "filter", required = false) String filter) {
+        System.out.println(filter);
         List<Data> schools = List.of(
                 new Data(0, 10, "School 1",LocalDate.of(2022, 1, 12)),
                 new Data(0, 20, "School 1",LocalDate.of(2022, 1, 12)),
@@ -70,12 +72,10 @@ public class DataController {
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
 
-        switch (filter) {
-            case "Schools": return schools;
-            case "Classes": return classes;
-            case "Groups": return groups;
-            default: return all;
-        }
+        if (Objects.equals(filter, "schools")) return schools;
+        else if (Objects.equals(filter, "classes")) return classes;
+        else if (Objects.equals(filter, "groups")) return groups;
+        else return all;
 
     }
 
